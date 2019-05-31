@@ -38,6 +38,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  fonts:
+    - family: icomoon
+      fonts:
+        - asset: fonts/icomoon.ttf
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/avatar_placeholder.png

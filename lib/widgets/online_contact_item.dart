@@ -10,20 +10,18 @@ Widget onlineContactItem(String contactName) {
           children: [
             CircleAvatar(
               backgroundImage: AssetImage("assets/avatar_placeholder.png"),
+              maxRadius: 24,
             ),
             Align(
-              heightFactor: 1.9,
+              heightFactor: 1.8,
               widthFactor: 2.5,
               alignment: Alignment.bottomRight,
-              child: Container(
-                padding: EdgeInsets.all(2),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
+              child: Badge(
+                padding: EdgeInsets.all(3),
+                backgroundColor: Colors.white,
                 child: Badge(
-                  backgroundColor: Colors.green,
-                  value: " ",
+                  backgroundColor: Color(0xff4ae83c),
+                  child: Text(" "),
                 ),
               ),
             ),
@@ -49,9 +47,11 @@ Widget addStoryItem() {
           children: [
             CircleAvatar(
               backgroundColor: Color(0xffefefef),
+              maxRadius: 24,
               child: Icon(
                 Icons.add,
                 color: Colors.black,
+                size: 30,
               ),
             ),
             Align(
@@ -66,7 +66,7 @@ Widget addStoryItem() {
                 ),
                 child: Badge(
                   backgroundColor: Colors.transparent,
-                  value: " ",
+                  child: Text(" "),
                 ),
               ),
             ),
