@@ -4,8 +4,8 @@ class ListItem extends StatelessWidget {
   final Widget title;
   final Widget subTitle;
   final Widget traillingWidget;
-
-  ListItem({this.title, this.subTitle, this.traillingWidget});
+  final Function onTap;
+  ListItem({this.title, this.subTitle, this.traillingWidget, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +19,7 @@ class ListItem extends StatelessWidget {
       title: title,
       subtitle: subTitle,
       trailing: traillingWidget,
+      onTap: onTap ?? () {},
     );
   }
 }

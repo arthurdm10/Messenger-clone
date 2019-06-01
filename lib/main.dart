@@ -20,15 +20,16 @@ class MainPage extends StatelessWidget {
       );
       chats.add(
         ChatListItem(
-            chatName: "Contato $i",
-            msg: Text(
-              "Teste abc 1234",
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-            msgTime: randomMsgTime(),
-            msgStatus: MsgStatus.values[Random().nextInt(3)],
-            muted: Random().nextInt(2) == 1),
+          chatName: "Contato $i",
+          msg: Text(
+            "Teste abc 1234",
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+          msgTime: randomMsgTime(),
+          msgStatus: MsgStatus.values[Random().nextInt(3)],
+          muted: Random().nextInt(2) == 1,
+        ),
       );
     }
   }
@@ -54,7 +55,6 @@ class MainPage extends StatelessWidget {
             children: <Widget>[
               LayoutBuilder(
                 builder: (BuildContext context, BoxConstraints constraints) {
-                  print(constraints.maxWidth);
                   return Container(
                     constraints: BoxConstraints(
                       maxHeight: 45,

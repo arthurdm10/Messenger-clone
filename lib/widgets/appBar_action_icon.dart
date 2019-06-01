@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppBarAcionIcon extends StatelessWidget {
+class AppBarActionIcon extends StatelessWidget {
   final IconData iconData;
   final GestureTapCallback onTap;
   final Color iconColor;
@@ -8,7 +8,7 @@ class AppBarAcionIcon extends StatelessWidget {
   final double iconSize;
   final EdgeInsets containerPadding;
 
-  const AppBarAcionIcon({
+  const AppBarActionIcon({
     this.iconData,
     this.onTap,
     this.iconSize = 24,

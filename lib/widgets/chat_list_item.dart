@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:messenger_clone/chat.dart';
 
 import 'chat_trailling.dart';
 import 'list_item.dart';
@@ -7,14 +8,12 @@ class ChatListItem extends StatelessWidget {
   ChatTrailling chatTrailling;
   final String chatName;
   final String msgTime;
-  final String heroTag;
   final Widget msg;
 
   ChatListItem({
     Key key,
     this.chatName,
     this.msg,
-    this.heroTag,
     this.msgTime,
     bool muted = false,
     MsgStatus msgStatus = MsgStatus.received,
@@ -50,6 +49,15 @@ class ChatListItem extends StatelessWidget {
         ],
       ),
       traillingWidget: chatTrailling,
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => Chat(
+                  chatTitle: chatName,
+                ),
+          ),
+        );
+      },
     );
   }
 }

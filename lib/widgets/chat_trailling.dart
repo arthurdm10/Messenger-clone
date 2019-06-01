@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:messenger_clone/widgets/msg_status_icons.dart';
 import 'badge.dart';
 
 enum MsgStatus {
@@ -14,7 +15,6 @@ class ChatTrailling extends StatelessWidget {
   final bool muted;
   final MsgStatus msgStatus;
   Map<MsgStatus, Widget> msgStatusIcon;
-  static const double iconSize = 16;
   Widget mutedIcon;
 
   ChatTrailling({
@@ -24,27 +24,9 @@ class ChatTrailling extends StatelessWidget {
   }) {
     if (muted == false) {
       msgStatusIcon = {
-        MsgStatus.sent: Container(
-          child: Icon(
-            Icons.check_circle_outline,
-            color: Color(0xffc1c5cb),
-            size: iconSize,
-          ),
-        ),
-        MsgStatus.seen: Container(
-          child: Icon(
-            Icons.check_circle,
-            color: Color(0xff0d99fd),
-            size: iconSize,
-          ),
-        ),
-        MsgStatus.received: Container(
-          child: Icon(
-            Icons.check_circle,
-            color: Color(0xffc1c5cb),
-            size: iconSize,
-          ),
-        ),
+        MsgStatus.sent: MsgStatusIcon.msgSent(),
+        MsgStatus.seen: MsgStatusIcon.msgSeen(),
+        MsgStatus.received: MsgStatusIcon.msgReceived(),
       };
     } else {
       //notifications_off
@@ -52,7 +34,7 @@ class ChatTrailling extends StatelessWidget {
         child: Icon(
           Icons.notifications_off,
           color: Color(0xffc1c5cb),
-          size: iconSize,
+          size: MsgStatusIcon.iconSize,
         ),
       );
     }

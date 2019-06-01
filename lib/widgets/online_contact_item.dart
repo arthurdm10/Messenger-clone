@@ -1,32 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:messenger_clone/widgets/badge.dart';
 
+import 'online_avatar.dart';
+
 Widget onlineContactItem(String contactName) {
   return Container(
     margin: EdgeInsets.only(left: 10),
     child: Column(
       children: <Widget>[
-        Stack(
-          children: [
-            CircleAvatar(
-              backgroundImage: AssetImage("assets/avatar_placeholder.png"),
-              maxRadius: 24,
-            ),
-            Align(
-              heightFactor: 1.8,
-              widthFactor: 2.5,
-              alignment: Alignment.bottomRight,
-              child: Badge(
-                padding: EdgeInsets.all(3),
-                backgroundColor: Colors.white,
-                child: Badge(
-                  backgroundColor: Color(0xff4ae83c),
-                  child: Text(" "),
-                ),
-              ),
-            ),
-          ],
-        ),
+        onlineAvatar(24),
         Text(
           contactName,
           style: TextStyle(

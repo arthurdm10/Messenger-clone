@@ -24,13 +24,13 @@ AppBar mainAppBar() {
       ],
     ),
     actions: <Widget>[
-      AppBarAcionIcon(
+      AppBarActionIcon(
         containerPadding: EdgeInsets.all(3),
         iconData: Icons.camera_alt,
         iconColor: Colors.black,
         backgroundColor: Color(0xffefefef),
       ),
-      AppBarAcionIcon(
+      AppBarActionIcon(
         containerPadding: EdgeInsets.all(3),
         iconData: Icons.edit,
         iconColor: Colors.black,
